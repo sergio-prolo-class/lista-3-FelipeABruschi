@@ -7,10 +7,15 @@ public class Usuario {
     public Usuario(String login, String senha){
         this.login = login;
         this.senha = senha;
+        Gerenciador.cadastrar(this);
     }
 
     public String getlogin(){
         return this.login;
+    }
+
+    public String getSenha(){
+        return this.senha;
     }
 
 }
