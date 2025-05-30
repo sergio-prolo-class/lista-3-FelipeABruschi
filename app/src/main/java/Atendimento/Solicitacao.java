@@ -1,26 +1,28 @@
 package Atendimento;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Solicitacao {
     private String descricao;
     private String categoria;
-    private static String[] categorias = new String[]{"Suporte tecnico", "Informacao", "Atendimento Financeiro"};
+    private static List<String> categorias = Arrays.asList("Suporte tecnico", "Informacao", "Atendimento Financeiro");
 
     public Solicitacao(String descricao, String categoria){
         Boolean categoria_valida = false;
         this.descricao = descricao;
-        for(int i = 0; i < 3; i++)
-            if(categoria.equals(categorias[i])){
-                categoria_valida = true;
-                break;
-            }
-        if(categoria_valida)
-            this.categoria = categoria;
-        else{
-            System.out.println("Categoria inválida");
-            System.exit(0);
+        if (!categorias.contains(categoria)) {
+            throw new IllegalArgumentException("Categoria inválida: " + categoria);
         }
+        this.categoria = categoria;
+    }
+
+    public String getDescricao() {
+        return this.descricao;
+    }
+
+    public String getCategoria() {
+        return this.categoria;
     }
 }

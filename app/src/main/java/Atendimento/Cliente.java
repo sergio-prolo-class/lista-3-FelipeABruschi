@@ -22,9 +22,17 @@ public class Cliente {
         this.pedido.add(meu_pedido);
     }
 
+    public String getNome(){return this.nome;}
+
     public String getTelefone(){
         return this.telefone;
     }
 
+    public void Atendido(){
+        this.atendido = true;
+    }
 
+    public boolean isAtendido() {
+        return atendido;
+    }
 }
