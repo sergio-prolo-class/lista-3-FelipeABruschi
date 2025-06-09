@@ -33,6 +33,8 @@ java {
 application {
     // Define the main class for the application.
     mainClass = 'ifsc.poo.App'
+    //mainClass = 'Atendimento.App'
+    //mainClass = 'Biblioteca.App'
 }
 
 jar {
